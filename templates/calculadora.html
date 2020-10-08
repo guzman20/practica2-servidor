@@ -1,0 +1,47 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<meta charset="utf-8">
+	<title>Calculadora de grasa corporal</title>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	</head>
+	<body>
+	<h1>Calculadora de grasa corporal</h1>
+	<div style="width: 30%; margin-left:50px;">
+		<form method="post" th:action="@{/calculadora}" autocomplete="on">
+			<fieldset>
+				<div class="form-group">
+					<label for="peso" class="form-label">Peso:</label>
+					<input type="number" name="peso" placeholder="En Kg" step="0.01" class="form-control">
+				</div>
+				
+				<div class="form-group">
+					<label for="estatura" class="form-label">Estatura:</label>
+					<input type="number" name="estatura" placeholder="En metros" step="0.01" class="form-control">
+				</div>
+				
+				<div class="form-group">
+					<label for="edad" class="form-label">Edad:</label>
+					<input type="number" name="edad" placeholder="Años" step="0.01" class="form-control">
+				</div>
+				
+				<div class="form-check">
+					<label for="sexo" class="form-check-label">Sexo:</label>
+					<br>
+					<br>
+					<input type="radio" name="hm" value="1" class="form-check-input"> Hombre
+					<br>
+					<input type="radio" name="hm" value="0" class="form-check-input"> Mujer
+				</div>
+				
+			
+				<p>
+					¿Estas seguro que los datos son correctos?
+					<br>
+					<button type="submit" class="btn btn-primary">Enviar</button>
+					<button type="reset" class="btn btn-primary">Borrar</button>
+				</p>
+				</fieldset>
+		</form>
+		</div>
+</body>
+</html>

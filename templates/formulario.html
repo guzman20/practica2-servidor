@@ -1,0 +1,101 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<meta charset="utf-8">
+	<title>Formulario de registro</title>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	</head>
+	<body>
+		<div style="width: 30%; margin-left:50px;">
+			<form method="post" th:action="@{/formulario}" autocomplete="on">
+			<fieldset> <legend>Datos personales</legend>
+				<div class="form-group">
+					<label for="nombre" class="form-label">Nombre</label>
+					<input type="text" name="nombre" size="15" maxlength="15" placeholder="Tu nombre">
+					<br>
+					
+					<label for="primerApellido" class="form-label">Primer apellido</label>
+					<input type="text" name="primerApellido" size="15" maxlength="15" placeholder="Tu primer apellido">
+					<br>
+					
+					<label for="segundoApellido" class="form-label">Primer apellido</label>
+					<input type="text" name="segundoApellido" size="15" maxlength="15" placeholder="Tu segundo apellido">
+				</div>
+				
+				<div class="form-group">
+					<label for="email" class="form-label">E-mail</label>
+					<input type="text" name="email" placeholder="email@email.com">
+				</div>
+				
+				<div class="form-group">
+					<label for="fechaNacimiento" class="form-label">Fecha de nacimiento</label>
+					<select name="dia">
+						<option th:each="i : ${#numbers.sequence(1,31)}" th:value="${i}" th:text="${i}">dia</option>
+					</select>
+					<select name="mes">
+						<option th:each="i : ${#numbers.sequence(1,12)}" th:value="${i}" th:text="${i}">mes</option>
+					</select>
+					<select name="ano">
+						<option th:each="i : ${#numbers.sequence(2020,1920)}" th:value="${i}" th:text="${i}">año</option>
+					</select>
+				</div>
+				
+				<div class="form-group">
+					<label for="contrasena" class="form-label">Contraseña</label>
+					<input type="password" name="contrasena">
+				</div>
+				
+				<div class="form-check">
+					<label for="sexo" class="form-check-label">Sexo:</label>
+					<br>
+					<br>
+					<input type="radio" name="hm" value="h"> Hombre
+					<br>
+					<input type="radio" name="hm" value="m"> Mujer
+				</div>
+				
+				<div class="form-group">
+					<label for="direccion" class="form-label">Direccion:</label>
+					<input type="text" name="direccion" placeholder="calle o plaza, número y piso.">
+				</div>
+			</fieldset>
+			<fieldset> <legend>Nivel de Estudios e intereses</legend>
+				<div class="form-check">
+					<label for="nivelDeEstudios" class="form-check-label">Nivel de Estudio:</label>
+					<br>
+					<input type="radio" name="estudios" value="certificado" class="form-check-input"> Certificado Escolar
+					<br>
+					<input type="radio" name="estudios" value="eso" class="form-check-input"> Graduado en E.S.O
+					<br>
+					<input type="radio" name="estudios" value="bachiller" class="form-check-input"> Bachiller - Formación profesional
+					<br>
+					<input type="radio" name="estudios" value="diplomado" class="form-check-input"> Diplomado
+					<br>
+					<input type="radio" name="estudios" value="lincenciado" class="form-check-input"> Lincenciado o Doctorado
+				</div>
+				
+				<div class="form-group">
+					<label for="intereses" class="form-check-input">Recibir articulos sobre los siguientes temas:</label>
+					<br>
+					<input type="checkbox" name="intereses" value="Música" class="form-check-input"> Música
+					<br>
+					<input type="checkbox" name="intereses" value="Deportes" class="form-check-input"> Deportes
+					<br>
+					<input type="checkbox" name="intereses" value="Cine" class="form-check-input"> Cine
+					<br>
+					<input type="checkbox" name="intereses" value="Libros" class="form-check-input"> Libros
+					<br>
+					<input type="checkbox" name="intereses" value="Ciencia" class="form-check-input"> Ciencia
+				</div>
+			</fieldset>
+			<fieldset> <legend>Enviar formulario</legend>
+				<div class="form-group">
+					¿Estas seguro que los datos son correctos?
+					<br>
+					<input type="submit" value="enviar" class="btn btn-primary"/>
+					<input type="reset" value="Borrar datos" class="btn btn-primary"/>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>

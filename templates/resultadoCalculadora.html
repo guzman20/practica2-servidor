@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Resultados</title>
+<link reel="stylesheet" th:href="@{/css/bootstrap.min.css}"></style>
+</head>
+<body>
+	<p>Resultado:</p>
+	<!--  
+	<th:block th:switch="${hm}">
+	<div th:case="0">
+		<p th:if="${resultado <= 13 && resultado>=10}" th:text="Grasa+' '+esencial"></p>
+		<p th:if="${resultado <= 20 && resultado>13}" th:text="Atletas"></p>
+		<p th:if="${resultado <= 24 && resultado>20}" th:text="Fitness"></p>
+		<p th:if="${resultado <= 31 && resultado>24}" th:text="Aceptable"></p>
+		<p th:if="${resultado >= 32}" th:text="Obesidad"></p>
+	</div>
+	
+	<div th:case="1">
+		<p th:if="${resultado <= 5 && resultado>=2}" th:text="Grasa+' '+esencial"></p>
+		<p th:if="${resultado <= 13 && resultado>5}" th:text="Atletas"></p>
+		<p th:if="${resultado <= 17 && resultado>13}" th:text="Fitness"></p>
+		<p th:if="${resultado <= 24 && resultado>17}" th:text="Aceptable"></p>
+		<p th:if="${resultado >= 25}" th:text="Obesidad"></p>
+	</div>
+	-->
+	<p th:text="${#numbers.formatDecimal(resultado == null ? 0 : resultado , 0,2)+' '+'%(GC)'}"></p>
+	<p th:text="${resultado2}"></p>
+</body>
+</html>

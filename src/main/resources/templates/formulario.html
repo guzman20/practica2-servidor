@@ -1,0 +1,132 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<meta charset="utf-8">
+	<title>Formulario de registro</title>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<style type="text/css">
+		form { margin: 15px;}
+	</style>
+	<meta charset="utf-8">
+	</head>
+	<body>
+		
+			<form method="post" th:action="@{/formulario}" autocomplete="on" style="width: 90%;">
+			<fieldset > <legend>Datos personales</legend>
+				<div class="form-row">
+					<div class="col">
+						<label for="nombre" class="form-label">Nombre</label>
+						<input type="text" class="form-control" name="nombre" placeholder="Tu nombre">
+					</div>
+					<div class="col">
+					<label for="primerApellido" class="form-label">Primer apellido</label>
+					<input type="text" class="form-control" name="primerApellido" placeholder="Tu primer apellido">
+					</div>
+					<div class="col">
+						<label for="segundoApellido" class="form-label">Segundo apellido</label>
+						<input type="text" class="form-control" name="segundoApellido" placeholder="Tu segundo apellido">
+					</div>
+				</div>
+				
+				<div class="form-row">
+					<div class="col">
+						<label for="email" class="form-label">E-mail</label>
+						<input type="text" class="form-control" name="email" placeholder="email@email.com">
+					</div>
+					<div class="col">
+						<label for="fechaNacimiento" class="form-label">Fecha de nacimiento</label>
+						<div class="form-row">
+							<div class="col">
+								<select name="dia" class="form-control">
+									<option th:each="i : ${#numbers.sequence(1,31)}" th:value="${i}" th:text="${i}">dia</option>
+								</select>
+							</div>
+							<div class="col">
+								<select name="mes" class="form-control">
+									<option th:each="i : ${#numbers.sequence(1,12)}" th:value="${i}" th:text="${i}">mes</option>
+								</select>
+							</div>
+							<div class="col">
+								<select name="ano" class="form-control">
+									<option th:each="i : ${#numbers.sequence(2020,1920)}" th:value="${i}" th:text="${i}">año</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					
+				</div>
+				
+				<div class="form-row">
+					<div class="form-col" style="width: 33%;">
+						<label for="contrasena" class="form-label">Contraseña</label>
+						<input type="password" class="form-control" name="contrasena">
+					</div>
+					
+					<div class="form-col" style="width: 33%; ">
+						<div style="margin: 3% 30%;">
+						<div class="form-label">
+							<label for="sexo" class="form-check-label">Sexo:</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input type="radio" class="form-check-input" name="hm" value="h"> Hombre
+						</div>
+						<div class="form-check form-check-inline">
+							<input type="radio" class="form-check-input" name="hm" value="m"> Mujer
+						</div>
+						</div>
+					</div>
+					
+					<div class="form-col" style="width: 33%;">
+						<label for="direccion" class="form-label">Dirección:</label>
+						<input type="text" class="form-control" name="direccion" placeholder="calle o plaza, número y piso.">
+					</div>
+				</div>
+			</fieldset>
+			<fieldset> <legend>Nivel de Estudios e intereses</legend>
+				<div class="form-group form-check">
+					<div class="form-check-inline" style="width: 40%;">
+						<div class="form-group form-check">
+							<label for="nivelDeEstudios" class="form-check-label">Nivel de Estudio:</label>
+							<br>
+							<input type="radio" name="estudios" value="certificado" class="form-check-input"> Certificado Escolar
+							<br>
+							<input type="radio" name="estudios" value="eso" class="form-check-input"> Graduado en E.S.O
+							<br>
+							<input type="radio" name="estudios" value="bachiller" class="form-check-input"> Bachiller - Formación profesional
+							<br>
+							<input type="radio" name="estudios" value="diplomado" class="form-check-input"> Diplomado
+							<br>
+							<input type="radio" name="estudios" value="lincenciado" class="form-check-input"> Lincenciado o Doctorado
+						</div>
+					</div>
+					<div class="form-check-inline" style="width: 40%;">
+						<div class="form-group form-check">
+							<label for="intereses" class="form-check-input">Recibir articulos sobre los siguientes temas:</label>
+							<br>
+							<input type="checkbox" name="intereses" value="Música" class="form-check-input"> Música
+							<br>
+							<input type="checkbox" name="intereses" value="Deportes" class="form-check-input"> Deportes
+							<br>
+							<input type="checkbox" name="intereses" value="Cine" class="form-check-input"> Cine
+							<br>
+							<input type="checkbox" name="intereses" value="Libros" class="form-check-input"> Libros
+							<br>
+							<input type="checkbox" name="intereses" value="Ciencia" class="form-check-input"> Ciencia
+						</div>
+					</div>
+				</div>
+			</fieldset>
+			<fieldset> <legend>Enviar formulario</legend>
+				<div class="form-group">
+					¿Estas seguro que los datos son correctos?
+					<br>
+					<input type="submit" value="enviar" class="btn btn-primary"/>
+					<input type="reset" value="Borrar datos" class="btn btn-primary"/>
+				</div>
+			</fieldset>
+		</form>
+	
+</body>
+</html>

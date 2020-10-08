@@ -1,0 +1,33 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Formulario completado</title>
+<link reel="stylesheet" th:href="@{/css/bootstrap.min.css}"></style>
+</head>
+<body>
+Nombre:
+<p th:text="${nombre}+' '+${primerApellido}+' '+${segundoApellido}"></p>
+
+Fecha de nacimiento:
+<p th:text="${dia}+'/'+${mes}+'/'+${ano}"></p>
+
+E-mail:
+<p th:text=${email}></p>
+
+Genero:
+<p th:if="${hm == 'h'}" th:text="Hombre"></p>
+<p th:if="${hm == 'm'}" th:text="Mujer"></p>
+
+Dirección:
+<p th:text="${direccion}"></p>
+
+Nivel de Estudios:
+<p th:if="${estudios == 'certificado'}" th:text="Certificado+' '+Escolar"></p>
+<p th:if="${estudios == 'eso'}" th:text="Graduado+' '+en+' '+E.S.O"></p>
+<p th:if="${estudios == 'bachiller'}" th:text="Bachiller+' '+'-'+' '+Formacion+' '+profesional"></p>
+<p th:if="${estudios == 'diplomado'}" th:text="Diplomado"></p>
+<p th:if="${estudios == 'lincenciado'}" th:text="Lincenciado+' '+o+' '+Doctorado"></p>
+
+Intereses:
+<p th:text="${intereses}"></p>
+</body>
+</html>
