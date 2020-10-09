@@ -5,30 +5,31 @@
 <meta charset="utf-8">
 </head>
 <body>
-Nombre:
+<h1>Tus datos de registro son:</h1>
+<h4>Nombre:</h4>
 <p th:text="${nombre}+' '+${primerApellido}+' '+${segundoApellido}"></p>
 
-Fecha de nacimiento:
+<h4>Fecha de nacimiento:</h4>
 <p th:text="${dia}+'/'+${mes}+'/'+${ano}"></p>
 
-E-mail:
+<h4>E-mail:</h4>
 <p th:text=${email}></p>
 
-Genero:
+<h4>Genero:</h4>
 <p th:if="${hm == 'h'}" th:text="Hombre"></p>
 <p th:if="${hm == 'm'}" th:text="Mujer"></p>
 
-Dirección:
+<h4>Dirección:</h4>
 <p th:text="${direccion}"></p>
 
-Nivel de Estudios:
+<h4>Nivel de Estudios:</h4>
 <p th:if="${estudios == 'certificado'}" th:text="Certificado+' '+Escolar"></p>
 <p th:if="${estudios == 'eso'}" th:text="Graduado+' '+en+' '+E.S.O"></p>
 <p th:if="${estudios == 'bachiller'}" th:text="Bachiller+' '+'-'+' '+Formacion+' '+profesional"></p>
 <p th:if="${estudios == 'diplomado'}" th:text="Diplomado"></p>
 <p th:if="${estudios == 'lincenciado'}" th:text="Lincenciado+' '+o+' '+Doctorado"></p>
 
-Intereses:
+<h4>Intereses:</h4>
 <p th:text="${intereses}"></p>
 </body>
 </html>

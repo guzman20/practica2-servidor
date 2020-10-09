@@ -1,17 +1,15 @@
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
 	<meta charset="utf-8">
 	<title>Formulario de registro</title>
-	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
-	<style type="text/css">
-		form { margin: 15px;}
-	</style>
+	<link type="text/css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 	<meta charset="utf-8">
 	</head>
 	<body>
-		
-			<form method="post" th:action="@{/formulario}" autocomplete="on" style="width: 90%;">
-			<fieldset > <legend>Datos personales</legend>
+	<h1 style="margin: 1%;">Formulario de Registro</h1>
+			<form method="post" th:action="@{/formulario}" autocomplete="on" style="width: 90%; margin: 1%;">
+			<fieldset> <legend>Datos personales</legend>
 				<div class="form-row">
 					<div class="col">
 						<label for="nombre" class="form-label">Nombre</label>
@@ -117,7 +115,7 @@
 						</div>
 					</div>
 				</div>
-			</fieldset>
+			</fieldset >
 			<fieldset> <legend>Enviar formulario</legend>
 				<div class="form-group">
 					¿Estas seguro que los datos son correctos?
